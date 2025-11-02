@@ -1,0 +1,454 @@
+.hero {
+  position: relative;
+  padding: 120px 0 80px;
+  background-color: transparent;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* New Hero Content */
+.hero-content-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Big Logo */
+.hero-logo-big {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.logo-square-big {
+  background-color: var(--bg-zinc-900);
+  color: var(--accent-red-500);
+  padding: 24px 28px;
+  font-weight: 700;
+  font-size: 64px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 0px 1px var(--border-white-10);
+  width: 128px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.4px;
+  line-height: 96px;
+}
+
+.logo-text-big {
+  color: white;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 96px;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.4);
+}
+
+/* Hero Title */
+.hero-title-main {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  color: white;
+  margin: 0;
+  letter-spacing: -1px;
+  max-width: 800px;
+}
+
+/* Hero Subtext */
+.hero-subtext {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--text-zinc-300);
+  margin: 0;
+  max-width: 700px;
+  font-weight: 400;
+}
+
+/* $50,000 Stat */
+.hero-stat-prominent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.stat-value-large {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--accent-red-600);
+  line-height: 80px;
+  letter-spacing: -2px;
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+.stat-label-large {
+  font-size: 20px;
+  color: var(--text-zinc-300);
+  line-height: 28px;
+  font-weight: 500;
+}
+
+/* Leaderboard Preview - Mac Window Style */
+.hero-leaderboard-preview.mac-window {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 24px;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4), 0px 0px 0px 1px var(--border-white-10);
+}
+
+.mac-window-header {
+  background-color: var(--bg-zinc-900);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+}
+
+.mac-window-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mac-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mac-control-close {
+  background-color: #FF5F57;
+}
+
+.mac-control-minimize {
+  background-color: #FFBD2E;
+}
+
+.mac-control-maximize {
+  background-color: #28CA42;
+}
+
+.mac-window-title {
+  font-size: 13px;
+  color: var(--text-zinc-400);
+  font-weight: 400;
+  flex: 1;
+  text-align: center;
+  padding-right: 80px;
+}
+
+.mac-window-content {
+  padding: 28px 32px;
+}
+
+.leaderboard-header-new {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard-title-new {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.view-full-link-new {
+  color: var(--text-zinc-400);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.view-full-link-new:hover {
+  color: white;
+}
+
+.leaderboard-list-new {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.leaderboard-item-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  transition: background-color 0.2s;
+  border-radius: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.leaderboard-item-new:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-item-new.with-border-new {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.player-info-new {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.player-rank-new {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-zinc-400);
+  min-width: 32px;
+  text-align: center;
+}
+
+.player-avatar-new {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 1px var(--border-white-10);
+}
+
+.player-avatar-new img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-details-new {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player-name-new {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  line-height: 22px;
+}
+
+.player-handle-new {
+  font-size: 14px;
+  color: var(--text-zinc-400);
+  line-height: 20px;
+}
+
+.player-wagered-new {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.4px;
+}
+
+.leaderboard-footer-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.updated-time-new {
+  font-size: 13px;
+  color: var(--text-zinc-400);
+  line-height: 18px;
+}
+
+.login-link-new {
+  color: var(--text-zinc-400);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.login-link-new:hover {
+  color: white;
+}
+
+@media (max-width: 1400px) {
+  .hero-content-new {
+    gap: 28px;
+    max-width: 1000px;
+  }
+  
+  .hero-leaderboard-preview.mac-window {
+    max-width: 900px;
+  }
+  
+  .logo-text-big {
+    font-size: 64px;
+    line-height: 80px;
+  }
+  
+  .logo-square-big {
+    width: 108px;
+    height: 108px;
+    font-size: 56px;
+  }
+  
+  .hero-title-main {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  
+  .hero-subtext {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .stat-value-large {
+    font-size: 64px;
+    line-height: 72px;
+  }
+}
+
+@media (max-width: 968px) {
+  .hero {
+    padding: 80px 0 60px;
+    min-height: auto;
+  }
+  
+  .hero-content-new {
+    gap: 24px;
+  }
+  
+  .hero-leaderboard-preview.mac-window {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo-big {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .logo-text-big {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  
+  .logo-square-big {
+    width: 96px;
+    height: 96px;
+    font-size: 48px;
+  }
+  
+  .hero-title-main {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  
+  .hero-subtext {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .stat-value-large {
+    font-size: 56px;
+    line-height: 64px;
+  }
+  
+  .hero-leaderboard-preview.mac-window {
+    margin-top: 16px;
+  }
+  
+  .mac-window-content {
+    padding: 24px 16px;
+  }
+  
+  .mac-window-title {
+    font-size: 12px;
+    padding-right: 0;
+    text-align: left;
+  }
+  
+  .leaderboard-header-new {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .leaderboard-item-new {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+  }
+  
+  .player-wagered-new {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 0 40px;
+  }
+  
+  .logo-text-big {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  
+  .logo-square-big {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+  
+  .hero-title-main {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .stat-value-large {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  
+  .mac-window-header {
+    padding: 10px 12px;
+  }
+  
+  .mac-window-content {
+    padding: 20px 12px;
+  }
+}

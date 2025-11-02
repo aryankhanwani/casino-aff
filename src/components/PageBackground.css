@@ -1,0 +1,81 @@
+.page-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.page-overlay-blur {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(32px);
+  opacity: 0.5;
+}
+
+.page-overlay-blur.blur-1 {
+  background-color: rgba(220, 38, 38, 0.2);
+  width: 480px;
+  height: 480px;
+  left: -96px;
+  top: -96px;
+  animation: floatBlur1 20s ease-in-out infinite;
+}
+
+.page-overlay-blur.blur-2 {
+  background-color: rgba(239, 68, 68, 0.1);
+  width: 416px;
+  height: 416px;
+  right: -40px;
+  top: 299.98px;
+  animation: floatBlur2 25s ease-in-out infinite;
+}
+
+.page-overlay-blur.blur-3 {
+  background-color: rgba(185, 28, 28, 0.1);
+  width: 576px;
+  height: 576px;
+  bottom: -96px;
+  left: 475px;
+  animation: floatBlur3 30s ease-in-out infinite;
+}
+
+@keyframes floatBlur1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes floatBlur2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30px, 30px);
+  }
+}
+
+@keyframes floatBlur3 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+.page-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  opacity: 0.08;
+}
+
+.page-overlay-dots {
+  position: absolute;
+  inset: 0;
+}
+

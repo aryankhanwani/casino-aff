@@ -1,0 +1,183 @@
+.floating-icons-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 50;
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: auto !important;
+  touch-action: none;
+  will-change: transform;
+  transition: opacity 0.2s;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  cursor: grab !important;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.floating-icon:hover {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.floating-icon.dragging {
+  opacity: 1;
+  z-index: 1001;
+  animation: none !important;
+  transform: translate(-50%, -50%) scale(1.15);
+  cursor: grabbing !important;
+}
+
+.floating-icon svg {
+  filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.4));
+  pointer-events: none;
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.floating-icon img {
+  filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.4));
+  pointer-events: none;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.floating-icon.dragging svg,
+.floating-icon.dragging img {
+  filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.7));
+}
+
+.floating-icon.dragging .crystal-icon {
+  filter: drop-shadow(0 0 20px rgba(135, 206, 235, 0.9));
+}
+
+/* Default positions */
+.icon-chip {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.icon-dice {
+  top: 25%;
+  left: 85%;
+  animation-delay: 1.5s;
+  animation-duration: 7s;
+}
+
+.icon-card {
+  top: 70%;
+  left: 20%;
+  animation-delay: 3s;
+  animation-duration: 9s;
+}
+
+.icon-coin {
+  top: 65%;
+  left: 75%;
+  animation-delay: 2s;
+  animation-duration: 6s;
+}
+
+.icon-trophy {
+  top: 15%;
+  left: 50%;
+  animation-delay: 0.5s;
+  animation-duration: 10s;
+}
+
+.icon-spade {
+  top: 75%;
+  left: 80%;
+  animation-delay: 4s;
+  animation-duration: 8s;
+}
+
+.icon-crystal {
+  top: 45%;
+  left: 10%;
+  animation-delay: 2.5s;
+  animation-duration: 9s;
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.crystal-icon {
+  width: 200px !important;
+  height: 200px !important;
+  filter: drop-shadow(0 0 20px rgba(135, 206, 235, 0.6));
+  animation: crystalGlow 3s ease-in-out infinite;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.floating-icon.dragging .crystal-icon {
+  animation: none;
+}
+
+@keyframes crystalGlow {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.5)) brightness(1);
+    transform: rotate(-60deg);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(135, 206, 235, 0.8)) brightness(1.2);
+    transform: rotate(60deg);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.5)) brightness(1);
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) translateY(-20px) rotate(3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-icon {
+    opacity: 0.4;
+  }
+  
+  .floating-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-crystal {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .crystal-icon {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}

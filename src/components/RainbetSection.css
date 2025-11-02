@@ -1,0 +1,151 @@
+.rainbet-section {
+  padding: 80px 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.rainbet-card-container {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.partner-card.rainbet-single {
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(16, 185, 129, 0.08));
+  border: 2px solid rgba(5, 150, 105, 0.3);
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: 0px 8px 32px rgba(5, 150, 105, 0.2), 0px 0px 0px 1px var(--border-white-10);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.partner-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.partner-logo {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.rainbet-logo-style {
+  font-style: italic;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(5, 150, 105, 0.4);
+}
+
+.partner-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.partner-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 18px;
+  color: var(--text-zinc-300);
+  line-height: 28px;
+}
+
+.feature-bullet {
+  color: var(--accent-emerald-600);
+  font-weight: 700;
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.partner-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+  padding: 16px 24px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent-emerald-600), rgba(5, 150, 105, 0.9));
+  box-shadow: 0px 4px 20px rgba(5, 150, 105, 0.3), 0px 0px 0px 1px rgba(5, 150, 105, 0.5);
+}
+
+.partner-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+}
+
+.partner-btn:hover {
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.95), var(--accent-emerald-600));
+}
+
+@media (max-width: 1200px) {
+  .partner-card.rainbet-single {
+    padding: 36px;
+  }
+}
+
+@media (max-width: 968px) {
+  .rainbet-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .rainbet-section {
+    padding: 40px 0;
+  }
+  
+  .partner-card.rainbet-single {
+    padding: 24px;
+    gap: 24px;
+    border-radius: 16px;
+  }
+  
+  .partner-logo {
+    font-size: 36px;
+  }
+  
+  .partner-feature {
+    font-size: 16px;
+    line-height: 24px;
+    gap: 10px;
+  }
+  
+  .partner-btn {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-card.rainbet-single {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .partner-logo {
+    font-size: 28px;
+  }
+  
+  .partner-feature {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

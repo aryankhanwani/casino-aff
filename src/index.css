@@ -1,13 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Color variables based on Figma design */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: rgba(9, 9, 11, 0.6);
+  --bg-card: rgba(9, 9, 11, 0.6);
+  --bg-zinc-900: #18181B;
+  --bg-zinc-800: #27272A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --text-zinc-300: #D4D4D8;
+  --text-zinc-400: #A1A1AA;
+  --text-zinc-500: #71717A;
+  --accent-red: #DC2626;
+  --accent-red-600: #DC2626;
+  --accent-red-500: #EF4444;
+  --accent-red-300: #FCA5A5;
+  --accent-emerald-600: #059669;
+  --border-white-10: rgba(255, 255, 255, 0.1);
+  --border-white-13: rgba(255, 255, 255, 0.13);
+  --border-white-16: rgba(255, 255, 255, 0.16);
+  --border-white-20: rgba(255, 255, 255, 0.2);
+  --shadow-red: rgba(220, 38, 38, 0.6);
 }

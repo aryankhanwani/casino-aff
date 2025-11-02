@@ -1,38 +1,187 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #000000;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for sections */
+.section-container {
+  max-width: 1231px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent-red-600);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0px 0px 0px 1px var(--shadow-red);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-primary svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+  flex-shrink: 0;
+}
+
+.btn-secondary {
+  background-color: var(--bg-zinc-900);
+  color: var(--text-zinc-200);
+  border: 1px solid var(--border-white-10);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0px 0px 0px 1px var(--border-white-10);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(39, 39, 42, 0.8);
+}
+
+.btn-secondary svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-zinc-200);
+  flex-shrink: 0;
+}
+
+.btn-green {
+  background-color: var(--accent-emerald-600);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0px 0px 0px 1px rgba(5, 150, 105, 0.6);
+}
+
+.btn-green:hover {
+  opacity: 0.9;
+}
+
+.btn-green svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+  flex-shrink: 0;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0px 0px 0px 1px var(--border-white-10);
+}
+
+/* Pill badges */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--accent-red-300);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0px 0px 0px 1px rgba(239, 68, 68, 0.3);
+}
+
+.pill-badge-official {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-zinc-900);
+  color: var(--text-zinc-300);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0px 0px 0px 1px var(--border-white-10);
+}
+
+.pill-badge-official::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-red-600);
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+/* Icon styles */
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.icon-arrow,
+.icon-link,
+.icon-doc,
+.icon-trophy,
+.icon-chat {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 18px;
+  line-height: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.icon-arrow {
+  font-size: 16px;
+  line-height: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Typography */
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
 }
