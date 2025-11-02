@@ -143,24 +143,6 @@ const FloatingIcons = () => {
       )
     },
     {
-      id: 'trophy',
-      name: 'Trophy',
-      component: (
-        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="trophyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{stopColor:"#FCD34D", stopOpacity:1}} />
-              <stop offset="100%" style={{stopColor:"#F59E0B", stopOpacity:1}} />
-            </linearGradient>
-          </defs>
-          <path d="M25 20 L25 35 C25 42 30 47 40 47 C50 47 55 42 55 35 L55 20 L50 20 L50 15 L30 15 L30 20 Z" fill="url(#trophyGradient)" stroke="#FCD34D" strokeWidth="2"/>
-          <rect x="35" y="47" width="10" height="15" fill="url(#trophyGradient)"/>
-          <rect x="20" y="62" width="40" height="5" rx="2" fill="url(#trophyGradient)"/>
-          <circle cx="40" cy="35" r="8" fill="#FFFFFF" opacity="0.3"/>
-        </svg>
-      )
-    },
-    {
       id: 'spade',
       name: 'Spade',
       component: (
@@ -171,10 +153,23 @@ const FloatingIcons = () => {
       )
     },
     {
-      id: 'crystal',
-      name: 'Crystal',
+      id: 'diamond',
+      name: 'Diamond',
       component: (
-        <img src="/icon crystal.png" alt="Crystal" className="crystal-icon" draggable="false" />
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 15 L50 35 L40 55 L30 35 Z" fill="#DC2626" stroke="#FFFFFF" strokeWidth="2"/>
+          <path d="M40 15 L55 40 L40 65 L25 40 Z" fill="#EF4444" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.8"/>
+        </svg>
+      )
+    },
+    {
+      id: 'seven',
+      name: 'Lucky Seven',
+      component: (
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="15" width="40" height="50" rx="8" fill="#DC2626" stroke="#FFFFFF" strokeWidth="2"/>
+          <text x="40" y="50" textAnchor="middle" fill="#FFFFFF" fontSize="48" fontWeight="700">7</text>
+        </svg>
       )
     }
   ];
@@ -192,9 +187,9 @@ const FloatingIcons = () => {
           dice: { x: '85%', y: '25%' },
           card: { x: '20%', y: '70%' },
           coin: { x: '75%', y: '65%' },
-          trophy: { x: '50%', y: '15%' },
           spade: { x: '80%', y: '75%' },
-          crystal: { x: '10%', y: '45%' },
+          diamond: { x: '10%', y: '40%' },
+          seven: { x: '12%', y: '60%' },
         }[iconId] || { x: `${20 + index * 15}%`, y: `${30 + index * 20}%` };
 
         return (

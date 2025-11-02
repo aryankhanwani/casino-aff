@@ -8,7 +8,7 @@
 
 .floating-icon {
   position: absolute;
-  opacity: 0.7;
+  opacity: 0.85;
   animation: float 6s ease-in-out infinite;
   pointer-events: auto !important;
   touch-action: none;
@@ -62,10 +62,6 @@
   filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.7));
 }
 
-.floating-icon.dragging .crystal-icon {
-  filter: drop-shadow(0 0 20px rgba(135, 206, 235, 0.9));
-}
-
 /* Default positions */
 .icon-chip {
   top: 20%;
@@ -95,13 +91,6 @@
   animation-duration: 6s;
 }
 
-.icon-trophy {
-  top: 15%;
-  left: 50%;
-  animation-delay: 0.5s;
-  animation-duration: 10s;
-}
-
 .icon-spade {
   top: 75%;
   left: 80%;
@@ -109,41 +98,18 @@
   animation-duration: 8s;
 }
 
-.icon-crystal {
-  top: 45%;
+.icon-diamond {
+  top: 40%;
   left: 10%;
+  animation-delay: 1.5s;
+  animation-duration: 7s;
+}
+
+.icon-seven {
+  top: 60%;
+  left: 12%;
   animation-delay: 2.5s;
   animation-duration: 9s;
-  width: 200px !important;
-  height: 200px !important;
-}
-
-.crystal-icon {
-  width: 200px !important;
-  height: 200px !important;
-  filter: drop-shadow(0 0 20px rgba(135, 206, 235, 0.6));
-  animation: crystalGlow 3s ease-in-out infinite;
-  pointer-events: none;
-  object-fit: contain;
-}
-
-.floating-icon.dragging .crystal-icon {
-  animation: none;
-}
-
-@keyframes crystalGlow {
-  0% {
-    filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.5)) brightness(1);
-    transform: rotate(-60deg);
-  }
-  50% {
-    filter: drop-shadow(0 0 25px rgba(135, 206, 235, 0.8)) brightness(1.2);
-    transform: rotate(60deg);
-  }
-  100% {
-    filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.5)) brightness(1);
-    transform: rotate(-60deg);
-  }
 }
 
 @keyframes float {
@@ -163,7 +129,7 @@
 
 @media (max-width: 768px) {
   .floating-icon {
-    opacity: 0.4;
+    opacity: 0.6;
   }
   
   .floating-icon svg {
@@ -171,13 +137,4 @@
     height: 60px;
   }
 
-  .icon-crystal {
-    width: 120px !important;
-    height: 120px !important;
-  }
-
-  .crystal-icon {
-    width: 120px !important;
-    height: 120px !important;
-  }
 }

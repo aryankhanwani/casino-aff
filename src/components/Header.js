@@ -3,10 +3,12 @@ import './Header.css';
 
 const Header = () => {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
       setCurrentHash(window.location.hash);
+      setIsMenuOpen(false); // Close menu on navigation
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -15,6 +17,14 @@ const Header = () => {
 
   const isLeaderboard = currentHash === '#leaderboard';
   const isHome = currentHash === '' || currentHash === '#home';
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
   
   return (
     <header className="header">
@@ -25,11 +35,16 @@ const Header = () => {
             <div className="logo-text">ABCXYZ</div>
           </a>
         </div>
-        <nav className="header-nav">
-          <a href="#home" className={`nav-link nav-link-home ${isHome ? 'active' : ''}`}>
+        <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
+          <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
+        </button>
+        <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
+          <a href="#home" className={`nav-link nav-link-home ${isHome ? 'active' : ''}`} onClick={handleNavClick}>
             Home
           </a>
-          <a href="#leaderboard" className={`nav-link nav-link-leaderboard ${isLeaderboard ? 'active' : ''}`}>
+          <a href="#leaderboard" className={`nav-link nav-link-leaderboard ${isLeaderboard ? 'active' : ''}`} onClick={handleNavClick}>
             Leaderboard
           </a>
           <button className="btn-login">
