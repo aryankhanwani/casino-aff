@@ -76,6 +76,10 @@
   white-space: nowrap;
 }
 
+.nav-link:visited {
+  color: var(--text-zinc-300);
+}
+
 .nav-link:hover {
   opacity: 0.8;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -47,7 +48,7 @@ const Hero = () => {
             </div>
             <div className="mac-window-content">
               <div className="leaderboard-header-new">
-                <a href="#full-board" className="view-full-link-new">View full board →</a>
+                <Link to="/leaderboard" className="view-full-link-new">View full board →</Link>
               </div>
               <div className="leaderboard-list-new">
                 {topPlayers.map((player) => (

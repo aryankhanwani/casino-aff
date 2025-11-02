@@ -126,7 +126,10 @@
   margin: 0;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links a:visited,
+.footer-links Link,
+.footer-links Link:visited {
   color: var(--text-zinc-400);
   text-decoration: none;
   font-size: 14px;
@@ -134,7 +137,8 @@
   transition: color 0.2s;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links Link:hover {
   color: white;
 }
 

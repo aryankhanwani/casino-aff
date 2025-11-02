@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -11,44 +12,32 @@ import PageBackground from './components/PageBackground';
 import FloatingIcons from './components/FloatingIcons';
 import LeaderboardPage from './components/LeaderboardPage';
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || 'home';
-      setCurrentPage(hash);
-    };
-
-    // Check initial hash
-    handleHashChange();
-
-    // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
-
+function HomePage() {
   return (
-    <div className="App">
-      <PageBackground />
-      <FloatingIcons />
-      <Header />
-      {currentPage === 'leaderboard' ? (
-        <LeaderboardPage />
-      ) : (
-        <>
-          <Hero />
-          <RainbetSection />
-          <RulesSection />
-          <RogueJackSection />
-          <ViewLeaderboardSection />
-        </>
-      )}
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <RainbetSection />
+      <RulesSection />
+      <RogueJackSection />
+      <ViewLeaderboardSection />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <PageBackground />
+        <FloatingIcons />
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
