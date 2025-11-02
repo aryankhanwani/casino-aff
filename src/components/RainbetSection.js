@@ -8,7 +8,7 @@ const RainbetSection = () => {
         <div className="rainbet-card-container">
           <div className="partner-card rainbet-single">
             <div className="partner-logo-container">
-              <div className="partner-logo rainbet-logo-style">Rainbet</div>
+              <img src="/rainbet.png" alt="Rainbet" className="rainbet-logo-image" />
             </div>
             <ul className="partner-features">
               <li className="partner-feature">

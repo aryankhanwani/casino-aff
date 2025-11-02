@@ -2,7 +2,7 @@
   padding: 56px 0;
   background-color: transparent;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   border-top: 1px solid var(--border-white-13);
 }
 

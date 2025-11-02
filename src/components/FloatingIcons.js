@@ -1,88 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import './FloatingIcons.css';
 
 const FloatingIcons = () => {
-  const [positions, setPositions] = useState({});
-  const [dragging, setDragging] = useState(null);
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  const containerRef = useRef(null);
-
-  const handleMouseDown = (e, iconId) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const rect = e.currentTarget.getBoundingClientRect();
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    
-    if (!containerRect) return;
-    
-    setDragOffset({
-      x: e.clientX - rect.left - rect.width / 2,
-      y: e.clientY - rect.top - rect.height / 2,
-    });
-    
-    setDragging(iconId);
-    setPositions(prev => ({
-      ...prev,
-      [iconId]: {
-        x: rect.left - containerRect.left + rect.width / 2,
-        y: rect.top - containerRect.top + rect.height / 2,
-      }
-    }));
-  };
-
-  useEffect(() => {
-    if (!dragging) return;
-
-    const handleMouseMove = (e) => {
-      if (!containerRef.current) return;
-      
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const iconSize = 80; // Approximate icon size
-      const newX = e.clientX - containerRect.left - dragOffset.x;
-      const newY = e.clientY - containerRect.top - dragOffset.y;
-      
-      // Keep icons within container bounds
-      const constrainedX = Math.max(iconSize / 2, Math.min(newX, containerRect.width - iconSize / 2));
-      const constrainedY = Math.max(iconSize / 2, Math.min(newY, containerRect.height - iconSize / 2));
-      
-      setPositions(prev => ({
-        ...prev,
-        [dragging]: { x: constrainedX, y: constrainedY }
-      }));
-    };
-
-    const handleMouseUp = () => {
-      setDragging(null);
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-    
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, [dragging, dragOffset]);
-
-  const getStyle = (iconId, defaultClass) => {
-    const pos = positions[iconId];
-    const style = {
-      cursor: dragging === iconId ? 'grabbing' : 'grab',
-      userSelect: 'none',
-    };
-    
-    // Only apply inline positioning if icon has been moved
-    if (pos && pos.x !== null && pos.y !== null) {
-      style.left = `${pos.x}px`;
-      style.top = `${pos.y}px`;
-      style.transform = 'translate(-50%, -50%)';
-      style.animation = 'none';
-      style.right = 'auto';
-    }
-    
-    return style;
-  };
 
   // Casino-themed icons
   const icons = [
@@ -175,40 +94,15 @@ const FloatingIcons = () => {
   ];
 
   return (
-    <div 
-      className="floating-icons-container" 
-      ref={containerRef}
-    >
-      {icons.map((icon, index) => {
+    <div className="floating-icons-container">
+      {icons.map((icon) => {
         const iconId = icon.id;
         const defaultClass = `icon-${iconId}`;
-        const defaultPosition = {
-          chip: { x: '15%', y: '20%' },
-          dice: { x: '85%', y: '25%' },
-          card: { x: '20%', y: '70%' },
-          coin: { x: '75%', y: '65%' },
-          spade: { x: '80%', y: '75%' },
-          diamond: { x: '10%', y: '40%' },
-          seven: { x: '12%', y: '60%' },
-        }[iconId] || { x: `${20 + index * 15}%`, y: `${30 + index * 20}%` };
 
         return (
           <div 
             key={iconId}
-            className={`floating-icon ${defaultClass} ${dragging === iconId ? 'dragging' : ''}`}
-            style={getStyle(iconId, defaultClass)}
-            onMouseDown={(e) => handleMouseDown(e, iconId)}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              const touch = e.touches[0];
-              const mouseEvent = new MouseEvent('mousedown', {
-                clientX: touch.clientX,
-                clientY: touch.clientY,
-                bubbles: true,
-                cancelable: true
-              });
-              handleMouseDown(mouseEvent, iconId);
-            }}
+            className={`floating-icon ${defaultClass}`}
           >
             {icon.component}
           </div>

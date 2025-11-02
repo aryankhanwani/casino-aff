@@ -2,7 +2,7 @@
   padding: 80px 0;
   background-color: transparent;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .rainbet-card-container {
@@ -14,11 +14,11 @@
 }
 
 .partner-card.rainbet-single {
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(16, 185, 129, 0.08));
-  border: 2px solid rgba(5, 150, 105, 0.3);
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(239, 68, 68, 0.08));
+  border: 2px solid rgba(220, 38, 38, 0.3);
   border-radius: 20px;
   padding: 48px;
-  box-shadow: 0px 8px 32px rgba(5, 150, 105, 0.2), 0px 0px 0px 1px var(--border-white-10);
+  box-shadow: 0px 8px 32px rgba(220, 38, 38, 0.2), 0px 0px 0px 1px var(--border-white-10);
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -42,7 +42,13 @@
 .rainbet-logo-style {
   font-style: italic;
   letter-spacing: -1px;
-  text-shadow: 0 0 20px rgba(5, 150, 105, 0.4);
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+}
+
+.rainbet-logo-image {
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
 }
 
 .partner-features {
@@ -65,7 +71,7 @@
 }
 
 .feature-bullet {
-  color: var(--accent-emerald-600);
+  color: var(--accent-red-600);
   font-weight: 700;
   font-size: 20px;
   flex-shrink: 0;
@@ -81,8 +87,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--accent-emerald-600), rgba(5, 150, 105, 0.9));
-  box-shadow: 0px 4px 20px rgba(5, 150, 105, 0.3), 0px 0px 0px 1px rgba(5, 150, 105, 0.5);
+  background: linear-gradient(135deg, var(--accent-red-600), rgba(220, 38, 38, 0.9));
+  box-shadow: 0px 4px 20px rgba(220, 38, 38, 0.3), 0px 0px 0px 1px rgba(220, 38, 38, 0.5);
 }
 
 .partner-btn svg {
@@ -92,7 +98,7 @@
 }
 
 .partner-btn:hover {
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.95), var(--accent-emerald-600));
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.95), var(--accent-red-600));
 }
 
 @media (max-width: 1200px) {
@@ -118,8 +124,8 @@
     border-radius: 16px;
   }
   
-  .partner-logo {
-    font-size: 36px;
+  .rainbet-logo-image {
+    max-width: 200px;
   }
   
   .partner-feature {
@@ -140,8 +146,8 @@
     gap: 20px;
   }
   
-  .partner-logo {
-    font-size: 28px;
+  .rainbet-logo-image {
+    max-width: 180px;
   }
   
   .partner-feature {

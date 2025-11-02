@@ -3,20 +3,18 @@
   inset: 0;
   pointer-events: none;
   overflow: visible;
-  z-index: 50;
+  z-index: 0;
 }
 
 .floating-icon {
   position: absolute;
   opacity: 0.85;
   animation: float 6s ease-in-out infinite;
-  pointer-events: auto !important;
-  touch-action: none;
+  pointer-events: none;
   will-change: transform;
   transition: opacity 0.2s;
   transform: translate(-50%, -50%);
-  z-index: 1001;
-  cursor: grab !important;
+  z-index: 0;
   width: 80px;
   height: 80px;
   display: flex;
@@ -26,18 +24,7 @@
   user-select: none;
 }
 
-.floating-icon:hover {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.1);
-}
 
-.floating-icon.dragging {
-  opacity: 1;
-  z-index: 1001;
-  animation: none !important;
-  transform: translate(-50%, -50%) scale(1.15);
-  cursor: grabbing !important;
-}
 
 .floating-icon svg {
   filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.4));
@@ -57,10 +44,6 @@
   max-height: 100%;
 }
 
-.floating-icon.dragging svg,
-.floating-icon.dragging img {
-  filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.7));
-}
 
 /* Default positions */
 .icon-chip {

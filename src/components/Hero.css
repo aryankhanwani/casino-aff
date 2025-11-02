@@ -4,7 +4,7 @@
   background-color: transparent;
   min-height: 100vh;
   overflow: hidden;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* New Hero Content */
@@ -14,7 +14,7 @@
   align-items: center;
   gap: 32px;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
