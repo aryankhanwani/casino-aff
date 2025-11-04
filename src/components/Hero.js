@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="hero-content-new">
           {/* Big Logo */}
           <div className="hero-logo-big">
-            <img src="/icon crystal.png" alt="Crystal Logo" className="hero-crystal-logo" />
+            <img src="/creator.png" alt="Crystal Logo" className="hero-crystal-logo" />
           </div>
 
           {/* Hero Title */}
